@@ -1,0 +1,31 @@
+<h3>{{ title }}</h3>
+<div class="row">
+  <div class="col-xs-6 col-md-8">
+    <pre><code>
+      $scope.run = function() {
+        $scope.getData('/static/dummy.json');
+        $scope.getData('/static/dummy.json');
+        $scope.getData('/static/dummy.json');
+        $scope.getData('/static/dummy.json');
+        $scope.getData('/static/dummy.json');
+        $scope.getData('/static/dummy.json');
+      };
+    </code></pre>
+  </div>
+  <div class="col-xs-6 col-md-4">
+    <p>
+      Esta es la versión de código base, sobre la que aplicaremos las diferentes modificaciones.
+    </p>
+    <p>
+      Como podemos observar, no es más que un conjunto de llamadas a un servicio rest.
+    </p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-6 col-md-8">
+    <a class="btn btn-block btn-run" ng-click="run()">Run</a>
+  </div>
+  <div class="col-xs-6 col-md-4">
+    <h3 class="end-execution-flag">{{ executed }}</h3>
+  </div>
+</div>

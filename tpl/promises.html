@@ -1,0 +1,34 @@
+<h3>{{ title }}</h3>
+<div class="row">
+  <div class="col-xs-6 col-md-8">
+    <pre><code>
+      $scope.run = function() {
+        $timeout(function() {
+          $scope.getData('/static/dummy.json').
+            then($scope.getData('/static/dummy1.json')).
+            then($scope.getData('/static/dummy2.json')).
+            then(function() {
+              $scope.executed = "terminé!";
+            });
+        });
+      };
+    </code></pre>
+  </div>
+  <div class="col-xs-6 col-md-4">
+    <p>
+      El uso del cache evita que se repitan llamadas incluso después de refrescar la página.
+    </p>
+    <p>
+      Sin embargo, hay que ser cuidadoso, no sea que cacheemos llamadas a backend que no procedan,
+      como puede ser el caso de peticiones cuya respuesta dependa del usuario logueado.
+    </p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-6 col-md-8">
+    <a class="btn btn-block btn-run" ng-click="run()">Run</a>
+  </div>
+  <div class="col-xs-6 col-md-4">
+    <h3 class="end-execution-flag">{{ executed }}</h3>
+  </div>
+</div>
