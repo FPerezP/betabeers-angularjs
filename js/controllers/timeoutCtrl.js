@@ -2,6 +2,7 @@
 
 betabeersControllers.controller('timeoutCtrl', ['$scope', '$http', '$rootScope', '$timeout', function($scope, $http, $rootScope, $timeout) {
   $rootScope.activeTab = 'timeout';
+  $rootScope.activeTab = 'Y esto afecta al rendimiento?';
 
   $timeout(function() {
     $scope.run = function() {
