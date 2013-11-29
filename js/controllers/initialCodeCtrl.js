@@ -6,11 +6,8 @@ betabeersControllers.controller('initialCodeCtrl', ['$scope', '$http', '$rootSco
 
   $scope.run = function() {
     $scope.getData('/static/dummy.json');
-    $scope.getData('/static/dummy.json');
-    $scope.getData('/static/dummy.json');
-    $scope.getData('/static/dummy.json');
-    $scope.getData('/static/dummy.json');
-    $scope.getData('/static/dummy.json');
+    $scope.getData('/static/dummy1.json');
+    $scope.getData('/static/dummy2.json');
 
     $scope.executed = "Terminé!"
   };
