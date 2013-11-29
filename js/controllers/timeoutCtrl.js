@@ -1,15 +1,14 @@
 'user strict';
 
-betabeersControllers.controller('timeoutCtrl', ['$scope', '$http', '$rootScope', function($scope, $http, $rootScope) {
+betabeersControllers.controller('timeoutCtrl', ['$scope', '$http', '$rootScope', '$timeout', function($scope, $http, $rootScope, $timeout) {
   $rootScope.activeTab = 'timeout';
 
-  $scope.run = function() {
-    $scope.getData('/static/dummy.json');
-    $scope.getData('/static/dummy.json');
-    $scope.getData('/static/dummy.json');
-    $scope.getData('/static/dummy.json');
-    $scope.getData('/static/dummy.json');
-    $scope.getData('/static/dummy.json');
-  };
+  $timeout(function() {
+    $scope.run = function() {
+      $scope.getData('/static/dummy.json');
+      $scope.getData('/static/dummy1.json');
+      $scope.getData('/static/dummy2.json');
+    };
+  });
 }]);
 

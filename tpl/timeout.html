@@ -3,13 +3,12 @@
   <div class="col-xs-6 col-md-8">
     <pre><code>
       $scope.run = function() {
-        $scope.getData('/static/dummy.json');
-        $scope.getData('/static/dummy.json');
-        $scope.getData('/static/dummy.json');
-        $scope.getData('/static/dummy.json');
-        $scope.getData('/static/dummy.json');
-        $scope.getData('/static/dummy.json');
-      };
+        $timeout(function() {
+          $scope.getData('/static/dummy1.json');
+          $scope.getData('/static/dummy2.json');
+          $scope.getData('/static/dummy3.json');
+        });
+      }
     </code></pre>
   </div>
   <div class="col-xs-6 col-md-4">
