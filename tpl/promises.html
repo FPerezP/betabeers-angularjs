@@ -5,10 +5,11 @@
       $scope.run = function() {
         $timeout(function() {
           $scope.getData('/static/dummy.json').
-            then($scope.getData('/static/dummy1.json')).
             then($scope.getData('/static/dummy2.json')).
+            then($scope.getData('/static/dummy1.json')).
             then(function() {
               $scope.executed = "terminé!";
+              cosole.log('Después de la última');
             });
         });
       };
