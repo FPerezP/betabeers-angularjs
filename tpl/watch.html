@@ -2,26 +2,23 @@
 <div class="row">
   <div class="col-xs-6 col-md-8">
     <pre><code>
+      $scope.$watch('executed', function() {
+        $scope.count++;
+        $scope.police = 'Se ha cambiado ' + $scope.count + ' veces';
+      });
+
       $scope.run = function() {
-        var useCache = true;
-        $timeout(function() {
-          $scope.getData('/static/dummy.json', useCache).
-            then($scope.getData('/static/dummy1.json')).
-            then($scope.getData('/static/dummy2.json', useCache)).
-            then(function() {
-              $scope.executed = "Terminé!"
-            });
-        });
+          $scope.executed = ':-O! Run me ha cambiado(' + $scope.count + ') !';
       };
+
     </code></pre>
   </div>
   <div class="col-xs-6 col-md-4">
     <p>
-      El uso del cache evita que se repitan llamadas incluso después de refrescar la página.
+      La función $watch es muy llamamtiva y suele usarse mucho. No dota de muchas posibliidades a la hora de interactuar con el usuario (Recordad! Gin&UX!! ;))
     </p>
     <p>
-      Sin embargo, hay que ser cuidadoso, no sea que cacheemos llamadas a backend que no procedan,
-      como puede ser el caso de peticiones cuya respuesta dependa del usuario logueado.
+      Pero hay que tener cuidado con su uso. ya que la función que evalue watch para saber si tiene que ejecutar algo puede contener una lógica que nos penalice enormemente.
     </p>
   </div>
 </div>
@@ -29,7 +26,10 @@
   <div class="col-xs-6 col-md-8">
     <a class="btn btn-block btn-run" ng-click="run()">Run</a>
   </div>
-  <div class="col-xs-6 col-md-4">
+  <div class="col-xs-6 col-md-2">
     <h3 class="end-execution-flag">{{ executed }}</h3>
+  </div>
+  <div class="col-xs-6 col-md-2">
+    <h3 class="end-execution-flag">{{ police }}</h3>
   </div>
 </div>
