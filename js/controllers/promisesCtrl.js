@@ -10,7 +10,7 @@ betabeersControllers.controller('promisesCtrl', ['$scope', '$http', '$rootScope'
         then($scope.getData('/static/dummy2.json')).
         then($scope.getData('/static/dummy1.json')).
         then(function() {
-          $scope.executed = "terminé!";
+          $scope.executed = "Terminé!";
           console.log('Después de la última');
         });
     });
